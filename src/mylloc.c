@@ -2,25 +2,24 @@
 #include <stdio.h>
 #include <string.h>
 
-void* heap_start() = NULL;
+void *heap_start = NULL;
 
 void* dlloc(size_t length){
     void* allocated_adress = sbrk(length);
-    if (heap_start = NULL){
-        heap_start = allocated_address;
+    if (heap_start == NULL){
+        heap_start = allocated_adress;
     }
     return allocated_adress;
 } //allocates the memory
 
 
-int dfree(void* memory){
-    if(heap_start = NULL){
+int dfree_all(){
+    if(heap_start == NULL){
         return -1;
     }
 
     return brk(heap_start);
 }
-
 
 int main(){
     /*const char* message = "This is my heap message";
@@ -44,8 +43,8 @@ int main(){
 
     const char* message = "My Own Malloc";
     size_t size = strlen(message)*sizeof(char);
-    char * allocated_memory = dalloc(size);
+    char * allocated_memory = dlloc(size);
     strcpy(allocated_memory, message);
 
-    dfree();
+    dfree_all();
 }
