@@ -1,4 +1,4 @@
-dalloc - simple heap allocator
+allocd - simple heap allocator
 ==============================
 dalloc is a minimal heap allocator using sbrk and brk system calls.
 
